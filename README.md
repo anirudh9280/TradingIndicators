@@ -27,6 +27,10 @@ In a downtrend, the SMA can act as a resistance level where the price may revers
 - **Buy Signal**: If the current bid price crosses above the SMA, it may signal the start of an uptrend, indicating a potential buying opportunity.
 - **Sell Signal**: If the current bid price crosses below the SMA, it may signal the start of a downtrend, indicating a potential selling opportunity.
 
+Example: 
+<img width="1390" alt="Screenshot 2024-08-22 at 12 51 05 AM" src="https://github.com/user-attachments/assets/3b0c1975-0dbc-4469-9eeb-5dc6ddec638f">
+
+
 
 ## Features
 
