@@ -1,7 +1,7 @@
 # Indicators 
 - - - 
 
-# Simple Moving Average (SMA) Indicator
+# Simple Moving Average Indicator (SMA)
 
 This tool is designed to help traders analyze market trends by calculating the Simple Moving Average (SMA) of a given cryptocurrency pair over a specified timeframe. The SMA is a fundamental technical analysis tool that aids in identifying market direction and potential support and resistance levels.
 
@@ -29,10 +29,9 @@ Before running the script, ensure you have the following installed:
 - [Pandas](https://pandas.pydata.org/)
 - A supported cryptocurrency exchange API key and secret (if accessing private endpoints)
 
----
-Simple Moving Average (SMA) Indicator
+- - -
 
-
+# Volume Weighted Average Price Indicator (VWAP)
 This tool is designed to help traders analyze the true average price of a security by calculating the Volume Weighted Average Price (VWAP) over the trading day. VWAP is a key technical indicator that provides insights into the average price considering both price and volume, aiding in decision-making for buying or selling.
 
 #### Presented in Chart
