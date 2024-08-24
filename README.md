@@ -89,8 +89,8 @@ Before running the script, ensure you have the following installed:
 
 This tool is designed to help traders identify overbought or oversold conditions in a security's price by calculating the Relative Strength Index (RSI). RSI is a momentum oscillator that measures the speed and change of price movements, providing insights into potential reversal points in the market.
 
-#### Presented in Chart
-<img width="1380" alt="Screenshot 2024-08-24 at 2 30 55 AM" src="https://github.com/user-attachments/assets/75b99d45-8d41-4f9e-bc11-919f7ab3e7da">
+#### Presented in Chart:<img width="1366" alt="Screenshot 2024-08-24 at 1 56 10 AM" src="https://github.com/user-attachments/assets/45247a1f-007f-4ba3-8841-7dafd01d848c">
+
 
 ## Features
 
