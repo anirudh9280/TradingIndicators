@@ -31,6 +31,31 @@ Before running the script, ensure you have the following installed:
 
 - - -
 
+
+This tool is designed to help traders identify overbought or oversold conditions in a security's price by calculating the Relative Strength Index (RSI). RSI is a momentum oscillator that measures the speed and change of price movements, providing insights into potential reversal points in the market.
+
+#### Presented in Chart
+<img width="1380" alt="Screenshot 2024-08-24 at 2 30 55 AM" src="https://github.com/user-attachments/assets/75b99d45-8d41-4f9e-bc11-919f7ab3e7da">
+
+## Features
+
+- **Overbought and Oversold Conditions**: Identify potential reversal points in the market based on RSI levels.
+- **Flexible Period Calculation**: Adjust the period for RSI calculation to suit different trading strategies.
+- **Buy/Sell Signal Generation**: Provides clear trading signals based on RSI thresholds.
+- **Integration with Other Indicators**: Combine RSI with other technical indicators for more robust trading strategies.
+
+---
+
+## Prerequisites
+
+Before running the script, ensure you have the following installed:
+
+- Python 3.7 or higher
+- [CCXT](https://github.com/ccxt/ccxt)
+- [Pandas](https://pandas.pydata.org/)
+
+- - -
+
 # Volume Weighted Average Price Indicator (VWAP)
 This tool is designed to help traders analyze the true average price of a security by calculating the Volume Weighted Average Price (VWAP) over the trading day. VWAP is a key technical indicator that provides insights into the average price considering both price and volume, aiding in decision-making for buying or selling.
 
