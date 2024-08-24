@@ -1,5 +1,4 @@
 ##### CODING RSI INDICATOR
-
 import ccxt 
 import dontshare as d
 import pandas as pd
