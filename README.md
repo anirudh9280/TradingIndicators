@@ -30,7 +30,8 @@ Before running the script, ensure you have the following installed:
 - A supported cryptocurrency exchange API key and secret (if accessing private endpoints)
 
 ---
-### Volume Weighted Average Price (VWAP) Indicator
+Simple Moving Average (SMA) Indicator
+
 
 This tool is designed to help traders analyze the true average price of a security by calculating the Volume Weighted Average Price (VWAP) over the trading day. VWAP is a key technical indicator that provides insights into the average price considering both price and volume, aiding in decision-making for buying or selling.
 
