@@ -48,39 +48,32 @@ def get_df_vwma():
 
 def vwma_indi():
 
-    df_vwma = get_df_vwma() # 
-
+    df_vwma = get_df_vwma() # getting the data frame from above
+    ### storing the SMA for three different periods
     df_vwma['SMA(41)'] = df_vwma.close.rolling(41).mean()
     df_vwma['SMA(20)'] = df_vwma.close.rolling(20).mean()
     df_vwma['SMA(75)'] = df_vwma.close.rolling(75).mean()
-
-    df_sma = df_vwma.fillna(0)
-
+    print(df_vwma)
     # now get VWMA
 
     vwmas = [20, 41, 75]
     for n in vwmas:
-
-        df_vwma[f'sum_vol{n}'] = df_vwma['volume'].rolling(min_periods=1, window=n).sum()
-
-        df_vwma['volXclose'] = (df_vwma['volume'])*(df_vwma['close'])
-        df_vwma[f'vXc{n}'] = df_vwma['volXclose'].rolling(min_periods=1, window=n).sum()
-
-# VWMA
-        df_vwma[f'VWMA({n})'] = (df_vwma[f'vXc{n}']) / (df_vwma[f'sum_vol{n}'])
-
-        # this is for VWMA signals
+        df_vwma[f'sum_vol{n}'] = df_vwma['volume'].rolling(min_periods=1, window=n).sum() # sum of volume from the three periods
+        df_vwma['volXclose'] = (df_vwma['volume'])*(df_vwma['close']) # creating a new column with close
+        df_vwma[f'vXc{n}'] = df_vwma['volXclose'].rolling(min_periods=1, window=n).sum() # summing previous column
+        # VWMA
+        df_vwma[f'VWMA({n})'] = (df_vwma[f'vXc{n}']) / (df_vwma[f'sum_vol{n}']) # finding VWMA by dividing sum of (volume x close) / sum_volume
+        # this is for VWMA signals - buy if vmwa > sma for that period
+        # buy
         df_vwma.loc[df_vwma[f'VWMA({n})'] > df_vwma['SMA(41)'], f'41sig{n}'] = 'BUY' 
         df_vwma.loc[df_vwma[f'VWMA({n})'] > df_vwma['SMA(20)'], f'20sig{n}'] = 'BUY'
         df_vwma.loc[df_vwma[f'VWMA({n})'] > df_vwma['SMA(75)'], f'75sig{n}'] = 'BUY'
-
+        # sell
         df_vwma.loc[df_vwma[f'VWMA({n})'] < df_vwma['SMA(41)'], f'41sig{n}'] = 'SELL' 
         df_vwma.loc[df_vwma[f'VWMA({n})'] < df_vwma['SMA(20)'], f'20sig{n}'] = 'SELL'
         df_vwma.loc[df_vwma[f'VWMA({n})'] < df_vwma['SMA(75)'], f'75sig{n}'] = 'SELL'
         print(df_vwma)
 
-        
     return df_vwma
-
 
 vwma_indi()
