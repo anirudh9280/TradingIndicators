@@ -15,13 +15,11 @@ params = {'timeInForce': 'PostOnly',}
 
 size = 1 
 params = {'timeInForce': 'PostOnly',}
-
 def ask_bid(symbol=symbol):
     try:
         ob = phemex.fetch_order_book(symbol)
         bid = ob['bids'][0][0]
         ask = ob['asks'][0][0]
-        print(f'This is the ask for {symbol}: {ask}')
         return ask, bid
     except ccxt.NetworkError as e:
         print(f'Network Error: {e}')
@@ -36,6 +34,8 @@ timeframe = '15m'
 limit = 100
 sma = 20 
 
+rsi_buy_threshold = 30
+rsi_sell_threshold = 70
 
 # pandas and TA
 def df_rsi(symbol=symbol, timeframe=timeframe, limit=limit):
@@ -45,14 +45,14 @@ def df_rsi(symbol=symbol, timeframe=timeframe, limit=limit):
     df_rsi['Timestamp'] = pd.to_datetime(df_rsi['Timestamp'], unit='ms')
     # if bid < 20 day sma then = BEARISH, SMA = BULLISH
     bid = ask_bid(symbol)[1]
-    print(df_rsi)
-    
     # RSI
-    rsi = RSIIndicator(df_rsi['Close'])
+    rsi = RSIIndicator(df_rsi['Close']) # RSIIndicator is from ta.momentum
     df_rsi['rsi'] = rsi.rsi()
+    df_rsi['sig'] = None
+    df_rsi.loc[df_rsi['rsi'] < rsi_buy_threshold, 'sig'] = 'BUY'
+    df_rsi.loc[df_rsi['rsi'] > rsi_sell_threshold, 'sig'] = 'SELL'
     print(df_rsi)
     return df_rsi
-
 df_rsi()
     
 
