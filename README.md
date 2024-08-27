@@ -34,7 +34,7 @@ Before running the script, ensure you have the following installed:
 This tool is designed to help traders analyze the true average price of a security by calculating the Volume Weighted Average Price (VWAP) over the trading day. VWAP is a key technical indicator that provides insights into the average price considering both price and volume, aiding in decision-making for buying or selling.
 
 #### Presented in Chart
-<img width="1380" alt="Screenshot 2024-08-24 at 1 44 11 AM" src="https://github.com/user-attachments/assets/099993fb-9d31-4920-9b85-1bc2f6045126">
+<img width="1380" alt="Screenshot 2024-08-26 at 1 00 09 AM" src="https://github.com/user-attachments/assets/443f6053-2239-4cd9-b79c-eda708de77c1">
 
 ## Features
 
@@ -79,5 +79,31 @@ Before running the script, ensure you have the following installed:
 - [CCXT](https://github.com/ccxt/ccxt)
 - [Pandas](https://pandas.pydata.org/)
 
-
 - - -
+# Volume Weighted Moving Average Indicator (VWMA)
+
+This tool is designed to help traders analyze the true average price of a security by calculating the Volume Weighted Moving Average (VWMA) over a specified period. VWMA is a technical indicator that provides insights into the average price considering both price and volume, which can be particularly useful in identifying trends and potential buy or sell opportunities.
+
+#### Presented in Chart
+<img width="1389" alt="Screenshot 2024-08-26 at 1 00 46 AM" src="https://github.com/user-attachments/assets/e2547155-51ae-4994-a9a4-170fdaf55d89">
+
+
+## Features
+
+- **Trend Identification**: Helps in identifying the prevailing trend by incorporating both price and volume into the moving average calculation.
+- **Volume Sensitivity**: VWMA places more emphasis on price movements with higher volume, making it more responsive to significant market actions.
+- **Buy/Sell Signal Generation**: Generates signals based on the comparison of VWMA with Simple Moving Averages (SMA), aiding traders in making informed decisions.
+- **Customizable Periods**: Allows traders to adjust the VWMA period to suit different trading strategies, whether short-term or long-term.
+
+---
+
+## Prerequisites
+
+Before running the script, ensure you have the following installed:
+
+- Python 3.7 or higher
+- [CCXT](https://github.com/ccxt/ccxt) (for fetching market data)
+- [Pandas](https://pandas.pydata.org/) (for data manipulation and analysis)
+
+---
+
