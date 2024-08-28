@@ -10,6 +10,7 @@ filepath = '/Users/anirudhannabathula/Desktop/quant/trading/hyperliquid_bot/BTC-
 df = pd.read_csv(filepath)
 df['sma'] = ta.SMA(df['close'], timeperiod=20)
 df['rsi'] = ta.RSI(df['close'], timeperiod=14)
+
 #EMA
 # df['ema']= ta.EMA(df['close'], timeperiod=10) 
 # bollinger bands
